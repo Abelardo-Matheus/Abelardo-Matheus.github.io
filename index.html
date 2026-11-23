@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matheus Abelardo · Desenvolvedor Web e de Jogos</title>
 <meta name="description" content="Portfólio de Matheus Abelardo: sites no ar, sistemas web, jogos e ferramentas. Engenharia de Computação na UFOP.">
-<meta name="theme-color" content="#0B0F17">
+<meta name="theme-color" content="#0A0A0C">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://abelardo-matheus.github.io/">
 <meta property="og:title" content="Matheus Abelardo · Portfólio">
@@ -16,368 +16,475 @@
 <link rel="icon" href="assets/foto.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
 <style>
 :root{
-  --bg:#0B0F17; --bg2:#111723; --card:#151C2A; --line:#243047; --ink:#E9EDF5; --muted:#98A3B8;
-  --accent:#8C9BFF; --accent2:#5B6CFF; --zap:#2FCB6B; --warm:#FFB547;
-  --f-d:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --f-b:"Onest","Segoe UI",system-ui,sans-serif; --f-m:"IBM Plex Mono",ui-monospace,Consolas,monospace;
-  --r:18px; --maxw:1180px;
+  --bg:#0A0A0C; --bg2:#0F0F12; --card:#131317; --card2:#18181D; --line:#24242B; --line2:#1B1B21;
+  --ink:#F3F3F4; --muted:#8E8E98; --dim:#5E5E68;
+  --red:#E3242B; --red2:#B3141B; --orange:#F2551D; --green:#2FCB6B;
+  --f-d:"Anton","Impact","Arial Narrow",sans-serif; --f-s:"Caveat",cursive;
+  --f-b:"Inter","Segoe UI",system-ui,sans-serif; --f-m:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --maxw:1240px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-b);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-b);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 img{max-width:100%;display:block}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
-.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:max(18px,env(safe-area-inset-left,0px))}
-h1,h2,h3{font-family:var(--f-d);line-height:1.06;letter-spacing:-.02em;margin:0;text-wrap:balance}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:max(22px,env(safe-area-inset-left,0px))}
+h1,h2,h3{margin:0;font-weight:400}
 p{margin:0}
-.eyebrow{font-family:var(--f-m);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.dot-red{color:var(--red)}
+.label{font:600 .7rem var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.label b{color:var(--red);font-weight:600}
+.display{font-family:var(--f-d);text-transform:uppercase;line-height:.92;letter-spacing:.005em}
 .muted{color:var(--muted)}
-section{padding-block:clamp(64px,9vw,112px)}
-.sec-head{display:grid;gap:12px;margin-bottom:44px;max-width:760px}
-.sec-head h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:800}
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;border-radius:999px;padding:13px 22px;border:1.5px solid transparent;transition:transform .15s,background .15s,border-color .15s;cursor:pointer;font:600 .98rem var(--f-b)}
-.btn:hover{transform:translateY(-2px)}
-.btn svg{width:18px;height:18px;flex:none}
-.btn-primary{background:var(--accent);color:#0B0F17}
-.btn-zap{background:var(--zap);color:#06210F}
-.btn-ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.02)}
-.btn-ghost:hover{border-color:var(--accent)}
-.btn-sm{padding:9px 16px;font-size:.88rem}
+section{padding-block:clamp(64px,8vw,104px)}
+.sec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.sec-top h2{font-size:clamp(2.4rem,5.4vw,4.4rem);margin-top:12px}
+.sec-top .side{max-width:380px;color:var(--muted);font-size:.92rem}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;font:600 .82rem var(--f-b);letter-spacing:.06em;text-transform:uppercase;padding:14px 22px;border:1px solid transparent;transition:background .15s,border-color .15s,color .15s}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:#ff6a33}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--red);color:#fff}
+.btn-sm{padding:10px 16px;font-size:.74rem}
+.ring{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:600 .78rem var(--f-b);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.ring i{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--red);display:grid;place-items:center;font-style:normal;transition:background .15s}
+.ring:hover i{background:var(--red);color:#fff}
 
 /* header */
-header.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.top .bar1{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.08rem var(--f-d)}
-.brand img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
-.brand,.top .btn{white-space:nowrap}
-@media (max-width:420px){.brand{font-size:.95rem}.brand img{width:30px;height:30px}.top .btn-sm{padding:8px 13px;font-size:.82rem}}
+header.top{position:sticky;top:0;z-index:30;background:rgba(10,10,12,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line2)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;height:64px}
+.logo{font:400 1.35rem var(--f-d);text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:8px;letter-spacing:.02em}
+.logo .heart{color:var(--red);font-size:1rem}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;position:relative;padding:8px 12px;text-decoration:none;color:var(--muted);font-size:.86rem;font-weight:500;transition:color .15s}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current="page"]{color:var(--ink)}
+.tabs a[aria-current="page"]::before{content:"";position:absolute;left:1px;top:50%;width:5px;height:5px;margin-top:-2px;border-radius:50%;background:var(--red)}
+.tabs a sup{font:500 .6rem var(--f-m);color:var(--red);margin-left:2px}
+.top .cta{justify-self:end;font-size:.82rem;font-weight:500;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:8px}
+.top .cta:hover{color:var(--red)}
+@media (max-width:860px){
+  .top .wrap{grid-template-columns:1fr auto;height:auto;padding-block:10px;row-gap:4px}
+  .tabs{grid-column:1/-1;order:3;margin-inline:-10px}
+}
+
+.panel[hidden]{display:none}
 
 /* hero */
-.hero{position:relative;padding-block:clamp(56px,9vw,120px) clamp(48px,7vw,90px);overflow:hidden}
-.hero::before{content:"";position:absolute;inset:-30% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(91,108,255,.28),transparent);pointer-events:none}
-.hero::after{content:"";position:absolute;inset:auto auto -40% -15%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(47,203,107,.12),transparent);pointer-events:none}
-.hero-grid{position:relative;max-width:900px}
-.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:800;margin-block:16px 22px}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),#C3CBFF);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .lead{font-size:1.12rem;color:var(--muted);max-width:58ch}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.avail{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted);border:1px solid var(--line);padding:6px 14px 6px 10px;border-radius:999px;background:var(--bg2)}
-.avail i{width:8px;height:8px;border-radius:50%;background:var(--zap);box-shadow:0 0 0 4px rgba(47,203,107,.2)}
-.stats{display:flex;flex-wrap:wrap;gap:16px 40px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
-.stats b{display:block;font:800 1.9rem var(--f-d)}
-.stats span{font-size:.85rem;color:var(--muted)}
-/* marquee */
-.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding-block:16px}
-.marquee .track{display:flex;gap:48px;width:max-content;animation:mq 38s linear infinite;font:500 .95rem var(--f-m);color:var(--muted)}
-.marquee span::before{content:"✦";color:var(--accent);margin-right:48px}
-@keyframes mq{to{transform:translateX(-50%)}}
+.hero{position:relative;padding-block:clamp(36px,5vw,64px) 0;overflow:hidden;background:radial-gradient(60% 70% at 60% 45%,rgba(227,36,43,.16),transparent 70%)}
+.hero .meta{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hero .meta .who{font:600 .72rem var(--f-b);letter-spacing:.12em;text-transform:uppercase;line-height:1.5}
+.hero .meta .who span{color:var(--red);display:block}
+.avail{display:inline-flex;align-items:center;gap:8px;font:600 .68rem var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);height:fit-content}
+.avail i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(47,203,107,.18)}
+.giant{position:relative;margin-top:0;padding-top:.16em;font:400 clamp(5rem,19.5vw,17.5rem)/.82 var(--f-d);text-transform:uppercase;letter-spacing:-.005em;color:var(--red);background:linear-gradient(180deg,#F0262E 0%,#C8161D 70%,#8E0E13 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;user-select:none;white-space:nowrap;text-align:center}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,.7fr);gap:32px;align-items:end;margin-top:clamp(-120px,-7vw,-48px);padding-bottom:40px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;margin-top:-10px}}
+.hello{font:600 clamp(1.8rem,3.4vw,2.8rem)/1 var(--f-s);color:#fff;transform:rotate(-4deg);transform-origin:left;display:inline-block;margin-bottom:4px}
+.name{font:400 clamp(3.4rem,7.5vw,6.4rem)/.9 var(--f-d);text-transform:uppercase;text-shadow:0 10px 40px rgba(0,0,0,.6)}
+.role{margin-top:18px;font:700 .9rem var(--f-b);letter-spacing:.04em;text-transform:uppercase;color:var(--orange);line-height:1.35}
+.intro{margin-top:12px;color:#C7C7CE;max-width:46ch;font-size:.95rem}
+.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:22px}
+.loc{display:flex;align-items:center;gap:8px;margin-top:22px;font:600 .68rem var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.loc svg{width:13px;height:13px;color:var(--red)}
+.mid-card{align-self:center;border:1px solid var(--line);background:rgba(19,19,23,.7);padding:22px;display:grid;gap:14px}
+.mid-card .row{display:flex;gap:14px;align-items:flex-start}
+.mid-card .ic{width:34px;height:34px;border-radius:50%;border:1px solid var(--red);display:grid;place-items:center;color:var(--red);flex:none;font-size:.9rem}
+.mid-card b{display:block;font-size:.9rem}
+.mid-card small{color:var(--muted);font-size:.8rem}
+.stats{display:grid;gap:18px;justify-items:start}
+.stat{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.stat b{font:400 clamp(2.4rem,4vw,3.2rem)/1 var(--f-d);color:var(--red)}
+.stat span{font:600 .64rem var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.45}
+.hero-foot{border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:16px;font:600 .66rem var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero-foot a{text-decoration:none;display:flex;align-items:center;gap:10px}
+.hero-foot a i{width:26px;height:26px;border-radius:50%;border:1px solid var(--red);display:grid;place-items:center;color:var(--red);font-style:normal;font-size:.6rem}
 
-/* abas */
-.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-bottom:-1px}
-.tabs::-webkit-scrollbar{display:none}
-.tabs a{flex:none;display:flex;align-items:center;gap:8px;padding:12px 16px;text-decoration:none;color:var(--muted);font-weight:500;font-size:.94rem;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
-.tabs a:hover{color:var(--ink)}
-.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
-.tabs a small{font:500 .7rem var(--f-m);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:var(--muted)}
-.tabs a[aria-current="page"] small{background:#1E2550;border-color:transparent;color:var(--accent)}
-.tabs .ext{margin-left:auto;color:var(--accent)}
-.panel[hidden]{display:none}
-.panel{animation:fadein .35s ease}
-@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.explore{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-@media (max-width:900px){.explore{grid-template-columns:minmax(0,1fr)}}
-.explore a{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-decoration:none;transition:transform .2s,border-color .2s}
-.explore a:hover{transform:translateY(-4px);border-color:var(--accent)}
-.explore .thumb{aspect-ratio:16/9;background:radial-gradient(120% 90% at 30% 10%,#1F2A44,#0E1320);overflow:hidden}
-.explore .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
-.explore a:hover .thumb img{transform:scale(1.04)}
-.explore .tx{padding:20px 22px;display:grid;gap:6px}
-.explore b{font:800 1.35rem var(--f-d);display:flex;justify-content:space-between;align-items:center}
-.explore b span{font:500 .8rem var(--f-m);color:var(--accent)}
-.explore p{color:var(--muted);font-size:.93rem}
-.sub-head{margin:56px 0 0;display:grid;gap:6px}
-.sub-head h3{font-size:1.5rem;font-weight:800}
-.sub-head p{color:var(--muted)}
-.mini:empty,.sub-head.empty{display:none}
+/* cards de categoria (início) */
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.cats{grid-template-columns:minmax(0,1fr)}}
+.cat{display:block;text-decoration:none}
+.cat .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.cat .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;filter:saturate(.9);transition:transform .5s,filter .3s}
+.cat:hover .thumb img{transform:scale(1.04);filter:saturate(1.05)}
+.cat .cap{display:flex;align-items:flex-start;gap:14px;padding:16px 2px;border-bottom:1px solid var(--line)}
+.num{font:400 2.4rem/1 var(--f-d);color:var(--orange)}
+.cat .cap b{display:block;font:700 .9rem var(--f-b);letter-spacing:.06em;text-transform:uppercase}
+.cat .cap small{font:600 .64rem var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cat .cap .go{margin-left:auto;color:var(--muted);transition:color .15s,transform .15s}
+.cat:hover .go{color:var(--red);transform:translate(2px,-2px)}
+
+/* ferramentas */
+.tools{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-block:1px solid var(--line2);padding-block:28px}
+.tools .label{line-height:1.6}
+.tools ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 28px;margin:0;padding:0;font:500 .84rem var(--f-m);color:#B9B9C2}
 
 /* projetos */
-.projects{display:grid;gap:28px}
-.proj{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.proj:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}
-.proj:nth-child(even) .car{order:2}
-@media (max-width:900px){.proj,.proj:nth-child(even){grid-template-columns:minmax(0,1fr)}.proj:nth-child(even) .car{order:0}}
-.proj[hidden]{display:none}
-.info{padding:clamp(22px,3vw,38px);display:flex;flex-direction:column;gap:14px}
+.projects{display:grid;gap:22px}
+.proj{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);background:var(--bg2);border:1px solid var(--line)}
+@media (max-width:900px){.proj{grid-template-columns:minmax(0,1fr)}}
+.info{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:14px}
+.info .head{display:flex;gap:16px;align-items:flex-start}
+.info .head .num{font-size:3.2rem}
+.info h3{font:400 clamp(1.7rem,2.6vw,2.3rem)/.98 var(--f-d);text-transform:uppercase}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font:500 .74rem var(--f-m);padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-.chip.hl{border-color:transparent;background:#1E2550;color:var(--accent)}
-.chip.live{border-color:transparent;background:rgba(47,203,107,.14);color:var(--zap)}
-.info h3{font-size:clamp(1.45rem,2.4vw,1.9rem);font-weight:800}
-.info p{color:var(--muted)}
-.info ul{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:4px;font-size:.95rem}
-.info ul li::marker{color:var(--accent)}
+.chip{font:600 .62rem var(--f-b);letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--line);color:var(--muted)}
+.chip.live{border-color:rgba(47,203,107,.35);color:var(--green)}
+.chip.hl{border-color:rgba(227,36,43,.5);color:#FF5A60}
+.info p{color:var(--muted);font-size:.93rem}
+.info ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:.9rem;color:#C2C2CA}
+.info ul li{display:flex;gap:10px}
+.info ul li::before{content:"";width:6px;height:6px;background:var(--red);margin-top:8px;flex:none}
 .info .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:8px}
-.url{font:500 .8rem var(--f-m);color:var(--muted)}
+.url{font:500 .74rem var(--f-m);color:var(--dim)}
 
 /* carrossel */
-.car{position:relative;min-width:0;background:radial-gradient(120% 90% at 30% 10%,#1F2A44,#0E1320);min-height:100%;display:flex;flex-direction:column}
+.car{position:relative;min-width:0;background:radial-gradient(90% 80% at 40% 20%,#1D1215,#0C0C0F 70%);border-right:1px solid var(--line);display:flex;flex-direction:column}
+@media (max-width:900px){.car{border-right:0;border-bottom:1px solid var(--line)}}
 .car .viewport{overflow:hidden;flex:1;display:flex;min-width:0}
-.car .slides{display:flex;transition:transform .5s cubic-bezier(.2,.8,.2,1);width:100%;min-width:0;flex:none}
+.car .slides{display:flex;transition:transform .55s cubic-bezier(.2,.8,.2,1);width:100%;min-width:0;flex:none}
 .car .slide{flex:0 0 100%;min-width:0;position:relative;aspect-ratio:16/11;min-height:300px}
-.car .slide figure{margin:0;position:absolute;inset:clamp(18px,3vw,34px) clamp(18px,3vw,34px) 54px;display:flex;align-items:center;justify-content:center}
-.browser{height:100%;max-width:100%;aspect-ratio:16/10.6;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.06);cursor:zoom-in;display:flex;flex-direction:column}
-.browser .bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#1B2232;font:500 .7rem var(--f-m);color:#8994AA;flex:none}
-.browser .bar i{width:9px;height:9px;border-radius:50%;background:#3A455C}
-.browser .bar i:nth-child(1){background:#FF6159}.browser .bar i:nth-child(2){background:#FFBD2E}.browser .bar i:nth-child(3){background:#28C941}
+.car .slide figure{margin:0;position:absolute;inset:clamp(18px,3vw,34px) clamp(18px,3vw,34px) 56px;display:flex;align-items:center;justify-content:center}
+.browser{height:100%;max-width:100%;aspect-ratio:16/10.6;overflow:hidden;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.55);border:1px solid #2A2A31;cursor:zoom-in;display:flex;flex-direction:column}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:7px 12px;background:#16161B;font:500 .66rem var(--f-m);color:#7D7D88;flex:none}
+.browser .bar i{width:8px;height:8px;border-radius:50%;background:#34343C}
+.browser .bar i:first-child{background:var(--red)}
 .browser .bar span{margin-left:8px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .browser img{width:100%;flex:1;min-height:0;object-fit:cover;object-position:top}
-.phone{height:100%;flex:none;aspect-ratio:9/19;border-radius:28px;padding:7px;background:#05070B;box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 0 0 1px #2A3245;cursor:zoom-in}
-.phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:22px}
-.shot{max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,.45);cursor:zoom-in;object-fit:contain}
-.car figcaption{position:absolute;left:18px;bottom:16px;font:500 .76rem var(--f-m);color:#C9D0E0;max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.car .ctrl{position:absolute;right:14px;bottom:10px;display:flex;align-items:center;gap:8px}
-.car .dots{display:flex;gap:6px;margin-right:4px}
-.car .dots button{width:8px;height:8px;border-radius:999px;border:0;background:#46506A;padding:0;cursor:pointer;transition:width .25s,background .25s}
-.car .dots button[aria-current="true"]{width:22px;background:var(--accent)}
-.car .arrow{width:34px;height:34px;border-radius:50%;border:1px solid #2E3850;background:rgba(11,15,23,.7);color:var(--ink);display:grid;place-items:center;cursor:pointer}
-.car .arrow:hover{border-color:var(--accent)}
-.car .arrow svg{width:16px;height:16px}
+.phone{height:100%;flex:none;aspect-ratio:9/19;border-radius:26px;padding:6px;background:#050507;box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 0 0 1px #2C2C34;cursor:zoom-in}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:21px}
+.shot{max-width:100%;max-height:100%;box-shadow:0 30px 60px rgba(0,0,0,.55);border:1px solid #2A2A31;cursor:zoom-in;object-fit:contain}
+.car figcaption{position:absolute;left:20px;bottom:18px;font:600 .64rem var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:#A9A9B2;max-width:55%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.car .ctrl{position:absolute;right:16px;bottom:11px;display:flex;align-items:center;gap:8px}
+.car .count{font:500 .7rem var(--f-m);color:var(--muted);margin-right:6px}
+.car .count b{color:var(--ink);font-weight:500}
+.car .arrow{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:rgba(10,10,12,.7);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:border-color .15s,background .15s}
+.car .arrow:hover{border-color:var(--red);background:var(--red)}
+.car .arrow svg{width:15px;height:15px}
+.car .bar-prog{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--line2)}
+.car .bar-prog i{display:block;height:100%;background:var(--red);transition:width .4s}
 
 /* outros projetos */
-.mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:28px}
-.mini a{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--bg2);text-decoration:none;transition:border-color .2s,transform .2s}
-.mini a:hover{border-color:var(--accent);transform:translateY(-3px)}
-.mini b{font:700 1.05rem var(--f-d)} .mini p{color:var(--muted);font-size:.9rem}
-.mini small{font:500 .74rem var(--f-m);color:var(--accent)}
+.sub-head{margin:64px 0 18px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:16px}
+.sub-head h3{font:400 1.8rem/1 var(--f-d);text-transform:uppercase}
+.sub-head p{color:var(--muted);font-size:.88rem}
+.mini{display:grid}
+.mini a{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:16px;align-items:center;padding:18px 4px;border-bottom:1px solid var(--line2);text-decoration:none;transition:background .15s}
+.mini a:hover{background:var(--bg2)}
+.mini .n{font:400 1.6rem var(--f-d);color:var(--dim)}
+.mini a:hover .n{color:var(--orange)}
+.mini b{display:block;font-weight:600}
+.mini p{color:var(--muted);font-size:.86rem}
+.mini small{font:500 .7rem var(--f-m);color:var(--muted);text-align:right}
+@media (max-width:600px){.mini a{grid-template-columns:44px minmax(0,1fr)}.mini small{display:none}}
+.mini:empty,.sub-head.empty{display:none}
 
-/* CTA vendas */
-.sell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center;background:linear-gradient(135deg,#1A2350,#121A30 60%);border:1px solid #2C3870;border-radius:28px;padding:clamp(26px,4vw,52px);overflow:hidden}
-@media (max-width:900px){.sell{grid-template-columns:1fr}}
-.sell h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}
-.sell p{color:#B9C2DA;margin-top:14px}
-.sell ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px;color:#D7DDF0}
-.sell li::before{content:"✓";color:var(--zap);font-weight:700;margin-right:10px}
-.sell .preview{position:relative;transform:rotate(-2deg);display:block}
-.sell .preview .browser{height:auto;width:100%;aspect-ratio:auto}
-.sell .preview .browser img{aspect-ratio:16/10;flex:none}
-.sell .preview .browser{cursor:pointer}
-.sell .preview .phone{position:absolute;right:-6px;bottom:-30px;height:78%;transform:rotate(5deg)}
+/* sobre */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr);gap:40px}
+@media (max-width:1000px){.about{grid-template-columns:minmax(0,1fr)}}
+.col-t{font:700 .78rem var(--f-b);letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.small-t{font:600 .64rem var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:22px 0 10px}
+.edu{display:flex;justify-content:space-between;gap:12px}
+.edu b{display:block;font-size:.92rem}
+.edu small{color:var(--muted);font-size:.8rem}
+.edu .yr{font:500 .7rem var(--f-m);color:var(--red);white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:.78rem;padding:5px 10px;border:1px solid var(--line);color:#C9C9D0}
+.steps{display:grid;border-left:1px solid var(--line);margin-left:16px}
+.steps div{position:relative;padding:0 0 20px 34px}
+.steps div::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--red);background:var(--bg)}
+.steps .k{position:absolute;left:-58px;top:-2px;font:400 1.35rem var(--f-d);color:var(--red);width:40px;text-align:right}
+.steps b{display:block;font:700 .78rem var(--f-b);letter-spacing:.08em;text-transform:uppercase}
+.steps p{color:var(--muted);font-size:.86rem}
+.steps small{font:500 .68rem var(--f-m);color:var(--dim)}
+.steps{margin-left:58px}
+.quote{background:linear-gradient(160deg,#E3242B,#A40F15);padding:30px 26px;display:flex;flex-direction:column;gap:16px;min-height:360px;position:relative;overflow:hidden}
+.quote::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 9px);pointer-events:none}
+.quote .q{font:400 4rem/.6 var(--f-d);color:rgba(255,255,255,.55)}
+.quote p{font:600 1.35rem/1.3 var(--f-b);color:#fff}
+.quote .sig{font:600 2rem var(--f-s);color:#fff;margin-top:auto}
+.quote small{font:600 .62rem var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
 
-/* sobre + stack */
-.about{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
-@media (max-width:900px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:14px}
-.tl{display:grid;gap:0;border-left:2px solid var(--line);margin-top:8px}
-.tl div{position:relative;padding:0 0 22px 22px}
-.tl div::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-.tl b{display:block;font-family:var(--f-d)} .tl small{color:var(--accent);font:500 .76rem var(--f-m)} .tl p{margin:4px 0 0;font-size:.93rem}
-.stack{display:grid;gap:20px}
-.stack h3{font-size:1rem;color:var(--muted);font-family:var(--f-m);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
-.stack .chips .chip{font-size:.86rem;padding:7px 13px;color:var(--ink);background:var(--bg2)}
+/* trajetória */
+.traj{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px}
+@media (max-width:900px){.traj{grid-template-columns:minmax(0,1fr)}}
+.tl details{border-top:1px solid var(--line)}
+.tl details:last-child{border-bottom:1px solid var(--line)}
+.tl summary{list-style:none;display:grid;grid-template-columns:170px minmax(0,1fr) 24px;gap:20px;padding:20px 0;cursor:pointer;align-items:start}
+.tl summary::-webkit-details-marker{display:none}
+.tl .yr{font:500 .72rem var(--f-m);color:var(--muted);padding-top:3px}
+.tl details[open] .yr{color:var(--red)}
+.tl summary b{display:block;font-weight:600;font-size:1.02rem}
+.tl summary small{color:var(--muted);font-size:.82rem}
+.tl .pm{color:var(--muted);font-size:1.2rem;line-height:1}
+.tl details[open] .pm{transform:rotate(45deg);color:var(--red)}
+.tl .body{padding:0 44px 22px 190px;color:var(--muted);font-size:.9rem}
+@media (max-width:600px){.tl summary{grid-template-columns:minmax(0,1fr) 24px}.tl .yr{grid-column:1/-1;padding:0}.tl .body{padding:0 0 20px}}
+.onair h3{font:400 3.2rem/.9 var(--f-d);text-transform:uppercase}
+.onair h3 span{color:var(--red);display:block}
+.onair ul{list-style:none;margin:22px 0 0;padding:0}
+.onair li a{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line2);text-decoration:none}
+.onair li a:hover b{color:var(--red)}
+.onair li .n{font:500 .7rem var(--f-m);color:var(--red)}
+.onair li b{font-size:.88rem;font-weight:600;display:block}
+.onair li small{color:var(--muted);font-size:.74rem}
+.onair li .ar{margin-left:auto;color:var(--muted)}
 
 /* contato */
-.contact{text-align:center;display:grid;justify-items:center;gap:18px}
-.contact h2{font-size:clamp(2.2rem,5.6vw,4rem);font-weight:800;max-width:16ch}
-.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px}
-footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.88rem}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.contact-wrap{position:relative;background:radial-gradient(50% 80% at 0% 30%,rgba(227,36,43,.14),transparent 70%)}
+.contact{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(0,.75fr);gap:40px;align-items:start}
+@media (max-width:1000px){.contact{grid-template-columns:minmax(0,1fr)}}
+.contact h2{font-size:clamp(2.6rem,4.4vw,4.2rem);margin:14px 0 18px}
+.contact .lead{color:#C2C2CA;max-width:40ch}
+.clist{list-style:none;margin:0;padding:0}
+.clist a,.clist div{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line2);text-decoration:none}
+.clist .ic{width:34px;height:34px;border-radius:50%;border:1px solid var(--red);display:grid;place-items:center;color:var(--red);flex:none}
+.clist .ic svg{width:15px;height:15px}
+.clist small{display:block;font:600 .6rem var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.clist b{font-weight:500;font-size:.92rem}
+.clist .ar{margin-left:auto;color:var(--muted)}
+.clist a:hover .ar,.clist a:hover b{color:var(--red)}
+.live-card{border:1px solid var(--line);background:var(--card);padding:20px;display:flex;flex-direction:column;gap:14px;text-decoration:none;min-height:250px}
+.live-card .top2{display:flex;justify-content:space-between;font:600 .58rem var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.live-card h3{font:400 2.6rem/.92 var(--f-d);text-transform:uppercase}
+.live-card h3 span{color:var(--red);display:block}
+.live-card .play{margin-top:auto;align-self:flex-end;width:44px;height:44px;border-radius:50%;background:var(--red);display:grid;place-items:center;color:#fff;transition:transform .15s}
+.live-card:hover .play{transform:scale(1.08)}
+.live-card p{color:var(--muted);font-size:.84rem}
+
+footer{border-top:1px solid var(--line2);padding-block:26px;color:var(--muted);font-size:.78rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+footer .logo{font-size:1.2rem;color:var(--ink)}
 footer a{text-decoration:none} footer a:hover{color:var(--ink)}
+footer .lk{display:flex;gap:18px;font-weight:500}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:100;background:rgba(5,7,11,.92);display:none;place-items:center;padding:24px;cursor:zoom-out}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(5,5,7,.94);display:none;place-items:center;padding:24px;cursor:zoom-out}
 .lb.open{display:grid}
-.lb img{max-width:min(1400px,100%);max-height:88vh;border-radius:12px;box-shadow:0 40px 80px rgba(0,0,0,.6)}
-.lb p{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#C9D0E0;font:500 .85rem var(--f-m)}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
+.lb img{max-width:min(1400px,100%);max-height:86vh;box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.lb p{position:absolute;bottom:18px;left:0;right:0;text-align:center;font:600 .7rem var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:#C9C9D0}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35ZM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 1 1 8.03 4.44Zm8.03-17.47A11.3 11.3 0 0 0 12.04.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.95 1.52 5.67L.58 23.6l6.02-1.58a11.33 11.33 0 0 0 5.43 1.38h.01c6.26 0 11.36-5.1 11.36-11.36 0-3.03-1.18-5.89-3.33-8.03Z"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.240-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.830 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.490-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35ZM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 1 1 8.03 4.44Zm8.03-17.47A11.3 11.3 0 0 0 12.04.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.950 1.52 5.67L.58 23.6l6.02-1.58a11.33 11.33 0 0 0 5.43 1.38h.01c6.26 0 11.36-5.1 11.36-11.36 0-3.03-1.18-5.89-3.33-8.03Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
   <symbol id="i-l" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"/></symbol>
   <symbol id="i-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></symbol>
 </svg>
 
 <header class="top">
-  <div class="wrap bar1">
-    <a class="brand" href="#inicio"><img src="assets/foto.jpg" alt="" width="34" height="34">Matheus Abelardo</a>
-    <a class="btn btn-primary btn-sm" href="/portfolio/">Quero um site</a>
-  </div>
   <div class="wrap">
+    <a class="logo" href="#inicio"><span class="heart">♥</span>Matheus<span class="dot-red">.</span></a>
     <nav class="tabs" aria-label="Seções do portfólio">
       <a href="#inicio">Início</a>
-      <a href="#sites">Sites <small data-n="sites"></small></a>
-      <a href="#games">Games <small data-n="games"></small></a>
-      <a href="#apps">Aplicações <small data-n="apps"></small></a>
+      <a href="#sites">Sites<sup data-n="sites"></sup></a>
+      <a href="#games">Games<sup data-n="games"></sup></a>
+      <a href="#apps">Aplicações<sup data-n="apps"></sup></a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
-      <a class="ext" href="/portfolio/">Planos e preços ↗</a>
     </nav>
+    <a class="cta" href="/portfolio/">Planos e preços <svg width="14" height="14"><use href="#i-arrow"/></svg></a>
   </div>
 </header>
 
 <main>
+<!-- ============ INÍCIO ============ -->
 <div class="panel" id="inicio">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="rv">
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="meta">
+      <div class="who">Desenvolvedor web<span>Sites · Sistemas · Jogos</span></div>
       <span class="avail"><i></i>Disponível para novos projetos</span>
-      <h1>Eu crio <em>sites, sistemas e jogos</em> que saem do papel e vão para o ar.</h1>
-      <p class="lead">Sou o Matheus Abelardo, desenvolvedor full stack e estudante de Engenharia de Computação na UFOP. Faço desde landing pages que vendem até painéis de gestão com banco de dados, extensões de navegador e jogos.</p>
-      <div class="ctas">
-        <a class="btn btn-primary" href="#sites">Ver projetos</a>
-        <a class="btn btn-zap" href="https://wa.me/5531983410907?text=Ol%C3%A1%20Matheus!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
-        <a class="btn btn-ghost" href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>GitHub</a>
+    </div>
+    <div class="giant" aria-hidden="true">Portfólio</div>
+    <div class="hero-grid">
+      <div>
+        <span class="hello">Olá, eu sou</span>
+        <h1 class="name">Matheus<span class="dot-red">.</span></h1>
+        <p class="role">Desenvolvedor full stack<br>&amp; criador de jogos</p>
+        <p class="intro">Crio landing pages que vendem, sites institucionais, painéis de gestão com banco de dados, extensões de navegador e jogos. Do primeiro rascunho até o site no ar.</p>
+        <div class="actions">
+          <a class="btn btn-orange" href="#sites">Ver projetos <svg><use href="#i-arrow"/></svg></a>
+          <a class="ring" href="https://wa.me/5531983410907?text=Ol%C3%A1%20Matheus!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><i><svg width="16" height="16"><use href="#i-wa"/></svg></i>WhatsApp</a>
+        </div>
+        <div class="loc"><svg><use href="#i-pin"/></svg>Remoto · Atendo o Brasil inteiro</div>
+      </div>
+      <div class="mid-card">
+        <div class="row"><span class="ic">◆</span><div><b>Engenharia de Computação</b><small>Universidade Federal de Ouro Preto (UFOP)</small></div></div>
+        <div class="row"><span class="ic">↗</span><div><b>Do requisito ao deploy</b><small>Front-end, back-end, banco de dados e publicação</small></div></div>
+        <div class="row"><span class="ic">▶</span><div><b>Código, música e jogos</b><small>GameMaker, Unity, Java, Pygame e Canvas</small></div></div>
       </div>
       <div class="stats">
-        <div><b data-count="9">9</b><span>projetos no ar</span></div>
-        <div><b>3+ anos</b><span>com desenvolvimento web</span></div>
-        <div><b data-count="18">18</b><span>repositórios públicos</span></div>
+        <div class="stat"><b>9<span class="dot-red">.</span></b><span>Projetos<br>no ar</span></div>
+        <div class="stat"><b>18</b><span>Repositórios<br>públicos</span></div>
+        <div class="stat"><b>3+</b><span>Anos com<br>desenvolvimento web</span></div>
       </div>
+    </div>
+  </div>
+  <div class="wrap hero-foot">
+    <a href="#sites"><i>▶</i>Ver um projeto por dentro</a>
+    <span>Projetos selecionados / 2022 – 2026</span>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-top">
+      <div><span class="label"><b>01</b> / Projetos selecionados</span><h2 class="display">Trabalho que está no ar<span class="dot-red">.</span></h2></div>
+      <p class="side">Os projetos estão separados por tipo. Cada um tem imagens em carrossel, link para ver ao vivo e o código no GitHub.</p>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#sites"><div class="thumb"><img src="assets/shots/selecao-d.jpg" alt="" loading="lazy"></div><div class="cap"><span class="num">01</span><div><b>Sites</b><small data-n="sites" data-suffix=" projetos · landing pages"></small></div><span class="go">↗</span></div></a>
+      <a class="cat" href="#games"><div class="thumb"><img src="assets/maze/mundo_aberto.jpg" alt="" loading="lazy"></div><div class="cap"><span class="num">02</span><div><b>Games</b><small data-n="games" data-suffix=" projetos · navegador e PC"></small></div><span class="go">↗</span></div></a>
+      <a class="cat" href="#apps"><div class="thumb"><img src="assets/shots/print_hortifruti_painel.jpg" alt="" loading="lazy"></div><div class="cap"><span class="num">03</span><div><b>Aplicações</b><small data-n="apps" data-suffix=" projetos · sistemas e IA"></small></div><span class="go">↗</span></div></a>
     </div>
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="track" id="mq"></div></div>
+<div class="wrap">
+  <div class="tools">
+    <span class="label">Feito com<br><b>as ferramentas de sempre</b></span>
+    <ul><li>HTML/CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Python</li><li>PHP</li><li>Supabase</li><li>Java</li><li>GameMaker</li><li>n8n</li></ul>
+  </div>
+</div>
 
 <section>
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Portfólio</span>
-      <h2>Escolha o que quer ver</h2>
-      <p class="muted">Os projetos estão separados por tipo. Cada um tem imagens em carrossel, link para ver ao vivo e o código no GitHub.</p>
+    <div class="contact" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)">
+      <div>
+        <span class="label"><b>→</b> Para o seu negócio</span>
+        <h2 class="display" style="font-size:clamp(2.6rem,5.6vw,4.6rem);margin:14px 0 18px">Precisa de um site<br>que vende<span class="dot-red">?</span></h2>
+        <p class="lead">Landing pages, sites institucionais, lojas e catálogos sob medida, prontos para celular e para o Google. Pagamento 50% no início e 50% na entrega.</p>
+        <div class="actions" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:24px">
+          <a class="btn btn-orange" href="/portfolio/">Ver planos e preços <svg><use href="#i-arrow"/></svg></a>
+          <a class="ring" href="#contato"><i>↗</i>Pedir orçamento</a>
+        </div>
+      </div>
+      <a class="cat" href="/portfolio/"><div class="thumb"><img src="assets/shots/vendas-d.jpg" alt="Página de planos e preços" loading="lazy"></div><div class="cap"><span class="num">→</span><div><b>Planos e preços</b><small>abelardo-matheus.github.io/portfolio</small></div><span class="go">↗</span></div></a>
     </div>
-    <div class="explore">
-      <a class="rv" href="#sites"><div class="thumb"><img src="assets/shots/selecao-d.jpg" alt="" loading="lazy"></div><div class="tx"><b>Sites <span data-n="sites"></span></b><p>Landing pages e sites institucionais publicados para clientes reais.</p></div></a>
-      <a class="rv" href="#games"><div class="thumb"><img src="assets/maze/mundo_aberto.jpg" alt="" loading="lazy"></div><div class="tx"><b>Games <span data-n="games"></span></b><p>Jogos no navegador, extensão multiplayer e jogos em GameMaker e Java.</p></div></a>
-      <a class="rv" href="#apps"><div class="thumb"><img src="assets/shots/print_hortifruti_painel.jpg" alt="" loading="lazy"></div><div class="tx"><b>Aplicações <span data-n="apps"></span></b><p>Sistemas web com banco de dados, ferramentas com IA e apps para músicos.</p></div></a>
+  </div>
+</section>
+</div>
+
+<!-- ============ CATEGORIAS ============ -->
+<div class="panel" id="sites" hidden><section><div class="wrap">
+  <div class="sec-top"><div><span class="label"><b>01</b> / Sites</span><h2 class="display">Sites que estão no ar<span class="dot-red">.</span></h2></div><p class="side">Landing pages e sites institucionais publicados. Use as setas ou arraste para ver computador e celular; clique para ampliar.</p></div>
+  <div class="projects" data-list="sites"></div>
+  <div class="sub-head" data-sub="sites"><h3>Estudos</h3><p>Primeiros projetos de HTML e CSS.</p></div>
+  <div class="mini" data-mini="sites"></div>
+</div></section></div>
+
+<div class="panel" id="games" hidden><section><div class="wrap">
+  <div class="sec-top"><div><span class="label"><b>02</b> / Games</span><h2 class="display">Jogos que dá pra jogar<span class="dot-red">.</span></h2></div><p class="side">Jogos no navegador, extensão multiplayer e projetos em GameMaker e Java. Clique nas imagens para ampliar.</p></div>
+  <div class="projects" data-list="games"></div>
+  <div class="sub-head" data-sub="games"><h3>Outros jogos</h3><p>Experimentos e projetos menores.</p></div>
+  <div class="mini" data-mini="games"></div>
+</div></section></div>
+
+<div class="panel" id="apps" hidden><section><div class="wrap">
+  <div class="sec-top"><div><span class="label"><b>03</b> / Aplicações</span><h2 class="display">Sistemas que trabalham<span class="dot-red">.</span></h2></div><p class="side">Sistemas web com banco de dados, painéis de gestão e ferramentas com inteligência artificial.</p></div>
+  <div class="projects" data-list="apps"></div>
+  <div class="sub-head" data-sub="apps"><h3>Outras aplicações</h3><p>Projetos da faculdade e ferramentas de estudo.</p></div>
+  <div class="mini" data-mini="apps"></div>
+</div></section></div>
+
+<!-- ============ SOBRE ============ -->
+<div class="panel" id="sobre" hidden>
+<section>
+  <div class="wrap">
+    <div class="sec-top">
+      <div><span class="label"><b>04</b> / Por trás do código</span><h2 class="display">Mais que código<span class="dot-red">.</span><br>Sites que <span class="dot-red">trabalham.</span></h2></div>
+      <p class="side">Sou Matheus Abelardo Trevenzole Araujo, de João Monlevade (MG). Trabalho com desenvolvimento web há mais de 3 anos, em projetos reais, e também com automação em n8n, bots de atendimento e suporte a clientes.</p>
+    </div>
+    <div class="about">
+      <div>
+        <div class="col-t">Formação &amp; especialidade</div>
+        <div class="small-t" style="margin-top:0">Formação</div>
+        <div class="edu"><div><b>Engenharia de Computação</b><small>Universidade Federal de Ouro Preto (UFOP)</small></div><span class="yr">em curso</span></div>
+        <div class="small-t">Serviços &amp; ferramentas</div>
+        <div class="tags"><span>Landing pages</span><span>Sites institucionais</span><span>Sistemas web</span><span>Painéis de gestão</span><span>Supabase</span><span>React</span><span>TypeScript</span><span>Python</span><span>PHP / Laravel</span><span>Java / Kotlin</span><span>GameMaker</span><span>n8n</span><span>Docker</span><span>Git</span></div>
+      </div>
+      <div>
+        <div class="col-t">Do briefing ao ar</div>
+        <div class="steps">
+          <div><span class="k">01</span><b>Conversa</b><p>Você me conta o objetivo, o público e manda logo, fotos e textos que já tiver.</p><small>WhatsApp · 15 min</small></div>
+          <div><span class="k">02</span><b>Proposta</b><p>Preço, prazo e o que está incluso. Com o sinal de 50%, o projeto entra na fila.</p><small>no mesmo dia</small></div>
+          <div><span class="k">03</span><b>Primeira versão</b><p>Um link de prévia para abrir no próprio celular.</p><small>24 h a 5 dias</small></div>
+          <div><span class="k">04</span><b>Ajustes</b><p>Mudanças de texto, cor e ordem das seções dentro das revisões.</p><small>até 24 h cada</small></div>
+          <div><span class="k">05</span><b>No ar</b><p>Site publicado, arquivos entregues e instruções para atualizar.</p><small>link pronto</small></div>
+        </div>
+      </div>
+      <div class="quote">
+        <span class="q">“</span>
+        <p>Site bom é o que trabalha por você enquanto você cuida do negócio.</p>
+        <span class="sig">Matheus</span>
+        <small>Desenvolvedor web · UFOP</small>
+      </div>
     </div>
   </div>
 </section>
 
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sell rv">
-      <div>
-        <span class="eyebrow">Para o seu negócio</span>
-        <h2 style="margin-top:12px">Precisa de um site profissional?</h2>
-        <p>Landing pages, sites institucionais, lojas e catálogos, sob medida e responsivos. Veja os planos, os preços e como funciona o processo, do primeiro contato até o site no ar.</p>
-        <ul>
-          <li>Site pronto para celular e para o Google</li>
-          <li>Botão de WhatsApp e prévia bonita nas redes</li>
-          <li>Pagamento 50% no início e 50% na entrega</li>
-        </ul>
-        <div class="ctas">
-          <a class="btn btn-primary" href="/portfolio/">Ver planos e preços <svg><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="https://wa.me/5531983410907?text=Ol%C3%A1%20Matheus!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Orçamento</a>
-        </div>
-      </div>
-      <a class="preview" href="/portfolio/" aria-label="Abrir a página de planos e preços">
-        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>abelardo-matheus.github.io/portfolio</span></div><img src="assets/shots/vendas-d.jpg" alt="Página de vendas com planos de sites" loading="lazy"></div>
-        <div class="phone"><img src="assets/shots/vendas-m.jpg" alt="" loading="lazy"></div>
-      </a>
+    <div class="sec-top">
+      <div><span class="label"><b>05</b> / Trajetória</span><h2 class="display">Sempre construindo<span class="dot-red">.</span> Sempre no ar<span class="dot-red">.</span></h2></div>
+      <span class="label">Experiência &amp; marcos</span>
     </div>
-  </div>
-</section>
-</div>
-
-<div class="panel" id="sites" hidden>
-<section>
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Sites</span>
-      <h2>Sites publicados</h2>
-      <p class="muted">Landing pages e sites institucionais no ar. Arraste as imagens ou use as setas para ver as versões de computador e celular; clique para ampliar.</p>
-    </div>
-    <div class="projects" data-list="sites"></div>
-    <div class="sub-head rv" data-sub="sites"><h3>Estudos</h3><p>Primeiros projetos de HTML e CSS.</p></div>
-    <div class="mini" data-mini="sites"></div>
-  </div>
-</section>
-</div>
-
-<div class="panel" id="games" hidden>
-<section>
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Games</span>
-      <h2>Jogos</h2>
-      <p class="muted">Jogos para navegador, extensão de navegador e jogos feitos em GameMaker e Java. Clique nas imagens para ampliar.</p>
-    </div>
-    <div class="projects" data-list="games"></div>
-    <div class="sub-head rv" data-sub="games"><h3>Outros jogos</h3><p>Projetos menores e experimentos. Cada um leva ao repositório com o código.</p></div>
-    <div class="mini" data-mini="games"></div>
-  </div>
-</section>
-</div>
-
-<div class="panel" id="apps" hidden>
-<section>
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Aplicações</span>
-      <h2>Sistemas e ferramentas</h2>
-      <p class="muted">Sistemas web com banco de dados, painéis de gestão e ferramentas com inteligência artificial.</p>
-    </div>
-    <div class="projects" data-list="apps"></div>
-    <div class="sub-head rv" data-sub="apps"><h3>Outras aplicações</h3><p>Projetos da faculdade e ferramentas de estudo. Cada um leva ao repositório com o código.</p></div>
-    <div class="mini" data-mini="apps"></div>
-  </div>
-</section>
-</div>
-
-<div class="panel" id="sobre" hidden>
-<section>
-  <div class="wrap about">
-    <div class="rv">
-      <div class="sec-head" style="margin-bottom:24px">
-        <span class="eyebrow">Sobre mim</span>
-        <h2>Do requisito ao deploy.</h2>
-      </div>
-      <p>Sou Matheus Abelardo Trevenzole Araujo, de João Monlevade (MG), e atendo clientes de todo o Brasil de forma remota. Estudo Engenharia de Computação na Universidade Federal de Ouro Preto (UFOP) e trabalho com desenvolvimento web há mais de 3 anos, em projetos reais.</p>
-      <p>Também tenho experiência com automação de processos em n8n, bots de atendimento e suporte a clientes. Fora do trabalho, junto música e programação e crio jogos em GameMaker, Unity e Java.</p>
+    <div class="traj">
       <div class="tl">
-        <div><b>Desenvolvedor & Suporte Técnico · WaSpeed</b><small>abr/2026 – ago/2026 · remoto</small><p class="muted">Extensão de CRM para WhatsApp: novas funcionalidades, automações com n8n e bots de atendimento.</p></div>
-        <div><b>Desenvolvedor Web · Visão Empresa Jr.</b><small>mai/2022 – atual · João Monlevade, MG</small><p class="muted">Projetos web reais, incluindo o site do Hospital São José de Nova Era, em equipe Scrum.</p></div>
-        <div><b>Estagiário de Desenvolvimento · Cafezinho</b><small>ago/2024 – jun/2025 · Ribeirão Preto, SP</small><p class="muted">Aplicativo com PHP, Laravel, Java e Kotlin. Docker para padronizar ambientes.</p></div>
-        <div><b>Instrutor de Informática · Microlins</b><small>nov/2021 – jul/2022 · Ipatinga, MG</small><p class="muted">Aulas de Windows, Office e Photoshop.</p></div>
+        <details open><summary><span class="yr">abr/2026 – ago/2026</span><span><b>Desenvolvedor &amp; Suporte Técnico</b><small>WaSpeed · remoto</small></span><span class="pm">+</span></summary><div class="body">Extensão de CRM para WhatsApp: novas funcionalidades, automações com n8n e bots de atendimento.</div></details>
+        <details><summary><span class="yr">ago/2024 – jun/2025</span><span><b>Estagiário de Desenvolvimento</b><small>Cafezinho · Ribeirão Preto, SP</small></span><span class="pm">+</span></summary><div class="body">Aplicativo com PHP, Laravel, Java e Kotlin. Docker para padronizar ambientes.</div></details>
+        <details><summary><span class="yr">mai/2022 – atual</span><span><b>Desenvolvedor Web</b><small>Visão Empresa Jr. · João Monlevade, MG</small></span><span class="pm">+</span></summary><div class="body">Projetos web reais, incluindo o site do Hospital São José de Nova Era, em equipe Scrum.</div></details>
+        <details><summary><span class="yr">nov/2021 – jul/2022</span><span><b>Instrutor de Informática</b><small>Microlins · Ipatinga, MG</small></span><span class="pm">+</span></summary><div class="body">Aulas de Windows, Office e Photoshop.</div></details>
       </div>
-    </div>
-    <div class="stack rv">
-      <div><h3>Front-end</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3 / Sass</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span><span class="chip">Bootstrap</span></div></div>
-      <div><h3>Back-end & dados</h3><div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">PHP / Laravel</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">C</span></div></div>
-      <div><h3>Jogos & mídia</h3><div class="chips"><span class="chip">GameMaker</span><span class="chip">Unity</span><span class="chip">Pygame</span><span class="chip">Canvas 2D</span><span class="chip">MIDI</span><span class="chip">Photoshop</span></div></div>
-      <div><h3>Ferramentas</h3><div class="chips"><span class="chip">Git & GitHub</span><span class="chip">GitHub Pages</span><span class="chip">Vercel</span><span class="chip">Docker</span><span class="chip">n8n</span><span class="chip">APIs de IA</span><span class="chip">Scrum</span></div></div>
+      <div class="onair">
+        <span class="label">Alguns marcos</span>
+        <h3 style="margin-top:10px">No ar<span class="dot-red">.</span><span>Em uso.</span></h3>
+        <ul id="onair"></ul>
+      </div>
     </div>
   </div>
 </section>
 </div>
 
+<!-- ============ CONTATO ============ -->
 <div class="panel" id="contato" hidden>
-<section>
-  <div class="wrap contact rv">
-    <span class="eyebrow">Contato</span>
-    <h2>Tem um projeto em mente? Vamos tirar do papel.</h2>
-    <p class="muted">Respondo no mesmo dia, de segunda a sábado.</p>
-    <div class="ctas" style="justify-content:center;margin-top:6px">
-      <a class="btn btn-zap" href="https://wa.me/5531983410907?text=Ol%C3%A1%20Matheus!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>(31) 98341-0907</a>
-      <a class="btn btn-ghost" href="mailto:abelardovendas12@gmail.com">abelardovendas12@gmail.com</a>
+<section class="contact-wrap">
+  <div class="wrap contact">
+    <div>
+      <span class="label"><b>06</b> / Seu próximo projeto</span>
+      <h2 class="display">Me conta o que<br>você precisa<span class="dot-red">.</span></h2>
+      <p class="lead">Respondo no mesmo dia, de segunda a sábado. Me diga o que o seu negócio faz e onde você quer chegar, e eu te digo como o site pode ajudar, em quanto tempo e quanto custa.</p>
+      <div style="margin-top:26px"><a class="ring" href="https://wa.me/5531983410907?text=Ol%C3%A1%20Matheus!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><i>↗</i>Começar uma conversa</a></div>
     </div>
-    <div class="socials">
-      <a class="btn btn-ghost btn-sm" href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>GitHub</a>
-      <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/dev_abelardo/" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn btn-ghost btn-sm" href="https://x.com/Dev_abelardo" target="_blank" rel="noopener">X</a>
-      <a class="btn btn-ghost btn-sm" href="https://www.reddit.com/user/Dev_Abelardo/" target="_blank" rel="noopener">Reddit</a>
-    </div>
+    <ul class="clist">
+      <li><a href="mailto:abelardovendas12@gmail.com"><span class="ic"><svg><use href="#i-mail"/></svg></span><span><small>E-mail</small><b>abelardovendas12@gmail.com</b></span><span class="ar">↗</span></a></li>
+      <li><a href="https://wa.me/5531983410907" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><b>(31) 98341-0907</b></span><span class="ar">↗</span></a></li>
+      <li><a href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-gh"/></svg></span><span><small>GitHub</small><b>Abelardo-Matheus</b></span><span class="ar">↗</span></a></li>
+      <li><a href="https://www.instagram.com/dev_abelardo/" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-ig"/></svg></span><span><small>Instagram</small><b>@dev_abelardo</b></span><span class="ar">↗</span></a></li>
+      <li><div><span class="ic"><svg><use href="#i-pin"/></svg></span><span><small>Onde</small><b>Remoto, o Brasil inteiro</b></span></div></li>
+    </ul>
+    <a class="live-card" href="/portfolio/">
+      <div class="top2"><span>Matheus · Sites</span><span>Planos</span></div>
+      <h3>Seu site<span>no ar.</span></h3>
+      <p>Veja planos, preços e como funciona.</p>
+      <span class="play">↗</span>
+    </a>
   </div>
 </section>
 </div>
@@ -385,8 +492,9 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="y">2026</span> Matheus Abelardo · Desenvolvedor web e de jogos</span>
-    <span><a href="/portfolio/">Planos e preços</a> · <a href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener">GitHub</a> · <a href="#" onclick="scrollTo({top:0,behavior:'smooth'});return false">Voltar ao topo</a></span>
+    <span class="logo">Matheus<span class="dot-red">.</span></span>
+    <span>© <span id="y">2026</span> Matheus Abelardo · Site bom é o que trabalha por você.</span>
+    <span class="lk"><a href="/portfolio/">Planos</a><a href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener">GitHub</a><a href="https://www.instagram.com/dev_abelardo/" target="_blank" rel="noopener">Instagram</a><a href="#" onclick="scrollTo({top:0,behavior:'smooth'});return false">Topo ↑</a></span>
   </div>
 </footer>
 
@@ -460,54 +568,58 @@ const MINI=[
 ];
 
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const pad=n=>String(n).padStart(2,'0');
 function slideHTML(s){
   const img=`<img src="${s.src}" alt="${esc(s.cap)}" loading="lazy" decoding="async">`;
   if(s.t==='d') return `<div class="browser" data-z="${s.src}" data-c="${esc(s.cap)}"><div class="bar"><i></i><i></i><i></i><span>${esc(s.url||'')}</span></div>${img}</div>`;
   if(s.t==='m') return `<div class="phone" data-z="${s.src}" data-c="${esc(s.cap)}">${img}</div>`;
   return `<img class="shot" src="${s.src}" alt="${esc(s.cap)}" loading="lazy" decoding="async" data-z="${s.src}" data-c="${esc(s.cap)}">`;
 }
-const card=(p,i)=>`
-<article class="proj rv" data-cat="${p.cat}">
+const card=(p,i,k)=>`
+<article class="proj">
   <div class="car" data-i="${i}" aria-roledescription="carrossel" aria-label="Imagens de ${esc(p.title)}">
     <div class="viewport"><div class="slides">${p.slides.map(s=>`<div class="slide" role="group" aria-roledescription="slide"><figure>${slideHTML(s)}</figure></div>`).join('')}</div></div>
     <figcaption>${esc(p.slides[0].cap)}</figcaption>
     <div class="ctrl">
-      <div class="dots">${p.slides.map((_,k)=>`<button type="button" aria-label="Imagem ${k+1}"></button>`).join('')}</div>
+      <span class="count"><b>01</b> / ${pad(p.slides.length)}</span>
       <button class="arrow prev" type="button" aria-label="Anterior"><svg><use href="#i-l"/></svg></button>
       <button class="arrow next" type="button" aria-label="Próxima"><svg><use href="#i-r"/></svg></button>
     </div>
+    <div class="bar-prog"><i></i></div>
   </div>
   <div class="info">
-    <div class="chips">${p.live?'<span class="chip live">● No ar</span>':''}${p.chips.map((c,k)=>`<span class="chip${k===0?' hl':''}">${esc(c)}</span>`).join('')}</div>
-    <h3>${esc(p.title)}</h3>
+    <div class="head"><span class="num">${pad(k)}</span><div style="display:grid;gap:10px"><h3>${esc(p.title)}</h3><div class="chips">${p.live?'<span class="chip live">● No ar</span>':''}${p.chips.map((c,j)=>`<span class="chip${j===0?' hl':''}">${esc(c)}</span>`).join('')}</div></div></div>
     <p>${esc(p.desc)}</p>
     <ul>${p.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>
     <div class="actions">
-      ${p.live?`<a class="btn btn-primary btn-sm" href="${p.live}" target="_blank" rel="noopener">Ver ao vivo <svg><use href="#i-arrow"/></svg></a>`:''}
-      ${p.code?`<a class="btn btn-ghost btn-sm" href="${p.code}" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>Código</a>`:''}
+      ${p.live?`<a class="btn btn-orange btn-sm" href="${p.live}" target="_blank" rel="noopener">Ver ao vivo <svg><use href="#i-arrow"/></svg></a>`:''}
+      ${p.code?`<a class="btn btn-line btn-sm" href="${p.code}" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>Código</a>`:''}
     </div>
     ${p.live?`<span class="url">${p.live.replace(/^https?:\/\//,'').replace(/\/$/,'')}</span>`:''}
   </div>
 </article>`;
+
 ['sites','games','apps'].forEach(c=>{
-  document.querySelector(`[data-list="${c}"]`).innerHTML=PROJECTS.map((p,i)=>p.cat===c?card(p,i):'').join('');
+  let k=0;
+  document.querySelector(`[data-list="${c}"]`).innerHTML=PROJECTS.map((p,i)=>p.cat===c?card(p,i,++k):'').join('');
   const mi=MINI.filter(x=>x[0]===c);
-  document.querySelector(`[data-mini="${c}"]`).innerHTML=mi.map(([,r,t,dsc,tech])=>`<a class="rv" href="${GH+r}" target="_blank" rel="noopener"><small>${tech}</small><b>${t}</b><p>${dsc}</p></a>`).join('');
+  document.querySelector(`[data-mini="${c}"]`).innerHTML=mi.map(([,r,t,dsc,tech])=>`<a href="${GH+r}" target="_blank" rel="noopener"><span class="n">${pad(++k)}</span><span><b>${t}</b><p>${dsc}</p></span><small>${tech} ↗</small></a>`).join('');
   if(!mi.length)document.querySelector(`[data-sub="${c}"]`).classList.add('empty');
-  const n=PROJECTS.filter(p=>p.cat===c).length+mi.length;
-  document.querySelectorAll(`[data-n="${c}"]`).forEach(el=>el.textContent=el.tagName==='SMALL'?n:n+' projetos');
+  document.querySelectorAll(`[data-n="${c}"]`).forEach(el=>el.textContent=k+(el.dataset.suffix||''));
 });
+
+// marcos (sites no ar)
+document.getElementById('onair').innerHTML=PROJECTS.filter(p=>p.live).slice(0,6).map((p,j)=>`<li><a href="${p.live}" target="_blank" rel="noopener"><span class="n">${pad(j+1)}</span><span><b>${esc(p.title.split(' · ')[0])}</b><small>${esc(p.chips[0])}</small></span><span class="ar">↗</span></a></li>`).join('');
 
 // carrosséis
 document.querySelectorAll('.car').forEach(car=>{
-  const p=PROJECTS[+car.dataset.i], track=car.querySelector('.slides'), dots=[...car.querySelectorAll('.dots button')], cap=car.querySelector('figcaption'), n=p.slides.length;
+  const p=PROJECTS[+car.dataset.i], track=car.querySelector('.slides'), cap=car.querySelector('figcaption'), cnt=car.querySelector('.count b'), prog=car.querySelector('.bar-prog i'), n=p.slides.length;
   let i=0, timer=null;
-  const go=k=>{i=(k+n)%n;track.style.transform=`translateX(-${i*100}%)`;dots.forEach((b,j)=>b.setAttribute('aria-current',j===i));cap.textContent=p.slides[i].cap};
+  const go=k=>{i=(k+n)%n;track.style.transform=`translateX(-${i*100}%)`;cap.textContent=p.slides[i].cap;cnt.textContent=pad(i+1);prog.style.width=((i+1)/n*100)+'%'};
+  const play=()=>{if(n>1&&!timer&&!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>go(i+1),5000)};
+  const stop=()=>{clearInterval(timer);timer=null};
   car.querySelector('.prev').onclick=()=>{go(i-1);stop()};
   car.querySelector('.next').onclick=()=>{go(i+1);stop()};
-  dots.forEach((b,j)=>b.onclick=()=>{go(j);stop()});
-  const play=()=>{if(n>1&&!timer&&!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>go(i+1),4500)};
-  const stop=()=>{clearInterval(timer);timer=null};
   car.addEventListener('mouseenter',stop);car.addEventListener('mouseleave',play);
   car.tabIndex=0;car.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){go(i-1);stop()}if(e.key==='ArrowRight'){go(i+1);stop()}});
   let x0=null;
@@ -528,7 +640,7 @@ document.addEventListener('click',e=>{
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
 
 // abas
-const panels=[...document.querySelectorAll('.panel')], tabs=[...document.querySelectorAll('.tabs a:not(.ext)')];
+const panels=[...document.querySelectorAll('.panel')], tabs=[...document.querySelectorAll('.tabs a')];
 function show(){
   const id=(location.hash||'#inicio').slice(1), pn=panels.find(x=>x.id===id)||panels[0];
   panels.forEach(x=>x.hidden=x!==pn);
@@ -539,14 +651,6 @@ function show(){
   document.title=(pn.id==='inicio'?'':label+' · ')+'Matheus Abelardo · Desenvolvedor Web e de Jogos';
 }
 addEventListener('hashchange',show); show();
-
-// marquee
-const words=['Landing pages','Sites institucionais','Sistemas web','Supabase','React','Extensões de navegador','Jogos 2D','Python','Automação com n8n','GitHub Pages'];
-document.getElementById('mq').innerHTML=[...words,...words].map(w=>`<span>${w}</span>`).join('');
-
-// reveal
-const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
