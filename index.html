@@ -87,9 +87,9 @@ header.top{position:sticky;top:0;z-index:30;background:rgba(10,10,12,.86);backdr
 .hero .meta .who span{color:var(--red);display:block}
 .avail{display:inline-flex;align-items:center;gap:8px;font:600 .68rem var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);height:fit-content}
 .avail i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(47,203,107,.18)}
-.giant{position:relative;margin-top:0;padding-top:.16em;font:400 clamp(5rem,19.5vw,17.5rem)/.82 var(--f-d);text-transform:uppercase;letter-spacing:-.005em;color:var(--red);background:linear-gradient(180deg,#F0262E 0%,#C8161D 70%,#8E0E13 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;user-select:none;white-space:nowrap;text-align:center}
+.giant{position:relative;margin-top:0;padding-top:.16em;font:400 clamp(2.5rem,18.5vw,17.5rem)/.82 var(--f-d);text-transform:uppercase;letter-spacing:-.005em;color:var(--red);background:linear-gradient(180deg,#F0262E 0%,#C8161D 70%,#8E0E13 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;user-select:none;white-space:nowrap;text-align:center}
 .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,.7fr);gap:32px;align-items:end;margin-top:clamp(-120px,-7vw,-48px);padding-bottom:40px}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr;margin-top:-10px}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;margin-top:14px}}
 .hello{font:600 clamp(1.8rem,3.4vw,2.8rem)/1 var(--f-s);color:#fff;transform:rotate(-4deg);transform-origin:left;display:inline-block;margin-bottom:4px}
 .name{font:400 clamp(3.4rem,7.5vw,6.4rem)/.9 var(--f-d);text-transform:uppercase;text-shadow:0 10px 40px rgba(0,0,0,.6)}
 .role{margin-top:18px;font:700 .9rem var(--f-b);letter-spacing:.04em;text-transform:uppercase;color:var(--orange);line-height:1.35}
@@ -243,7 +243,8 @@ header.top{position:sticky;top:0;z-index:30;background:rgba(10,10,12,.86);backdr
 /* contato */
 .contact-wrap{position:relative;background:radial-gradient(50% 80% at 0% 30%,rgba(227,36,43,.14),transparent 70%)}
 .contact{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(0,.75fr);gap:40px;align-items:start}
-@media (max-width:1000px){.contact{grid-template-columns:minmax(0,1fr)}}
+.contact.sell2{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center}
+@media (max-width:1000px){.contact,.contact.sell2{grid-template-columns:minmax(0,1fr)}}
 .contact h2{font-size:clamp(2.6rem,4.4vw,4.2rem);margin:14px 0 18px}
 .contact .lead{color:#C2C2CA;max-width:40ch}
 .clist{list-style:none;margin:0;padding:0}
@@ -365,7 +366,7 @@ footer .lk{display:flex;gap:18px;font-weight:500}
 
 <section>
   <div class="wrap">
-    <div class="contact" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)">
+    <div class="contact sell2">
       <div>
         <span class="label"><b>→</b> Para o seu negócio</span>
         <h2 class="display" style="font-size:clamp(2.6rem,5.6vw,4.6rem);margin:14px 0 18px">Precisa de um site<br>que vende<span class="dot-red">?</span></h2>
