@@ -50,12 +50,9 @@ section{padding-block:clamp(64px,9vw,112px)}
 
 /* header */
 header.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.top .bar1{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.08rem var(--f-d)}
 .brand img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
-.nav{display:flex;gap:24px;font-size:.92rem}
-.nav a{text-decoration:none;color:var(--muted)} .nav a:hover{color:var(--ink)}
-@media (max-width:920px){.nav{display:none}}
 .brand,.top .btn{white-space:nowrap}
 @media (max-width:420px){.brand{font-size:.95rem}.brand img{width:30px;height:30px}.top .btn-sm{padding:8px 13px;font-size:.82rem}}
 
@@ -63,8 +60,7 @@ header.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--b
 .hero{position:relative;padding-block:clamp(56px,9vw,120px) clamp(48px,7vw,90px);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-30% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(91,108,255,.28),transparent);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:auto auto -40% -15%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(47,203,107,.12),transparent);pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero-grid{position:relative;max-width:900px}
 .hero h1{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:800;margin-block:16px 22px}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),#C3CBFF);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{font-size:1.12rem;color:var(--muted);max-width:58ch}
@@ -74,26 +70,39 @@ header.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--b
 .stats{display:flex;flex-wrap:wrap;gap:16px 40px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
 .stats b{display:block;font:800 1.9rem var(--f-d)}
 .stats span{font-size:.85rem;color:var(--muted)}
-.portrait{position:relative;justify-self:center;width:min(380px,100%)}
-.portrait .ph{aspect-ratio:4/5;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
-.portrait .ph img{width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:.85rem;box-shadow:0 18px 40px rgba(0,0,0,.35)}
-.tag b{font-family:var(--f-d)}
-.tag small{display:block;color:var(--muted);font-size:.76rem}
-.tag .dot{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;background:#1E2550}
-.tag.t1{left:-28px;bottom:70px} .tag.t2{right:-22px;top:36px}
-@media (max-width:520px){.tag.t1{left:-6px}.tag.t2{right:-6px}}
-
 /* marquee */
 .marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding-block:16px}
 .marquee .track{display:flex;gap:48px;width:max-content;animation:mq 38s linear infinite;font:500 .95rem var(--f-m);color:var(--muted)}
 .marquee span::before{content:"✦";color:var(--accent);margin-right:48px}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-/* filtros */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
-.filters button{font:500 .9rem var(--f-b);color:var(--muted);background:transparent;border:1px solid var(--line);padding:8px 16px;border-radius:999px;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* abas */
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-bottom:-1px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;display:flex;align-items:center;gap:8px;padding:12px 16px;text-decoration:none;color:var(--muted);font-weight:500;font-size:.94rem;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tabs a small{font:500 .7rem var(--f-m);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:var(--muted)}
+.tabs a[aria-current="page"] small{background:#1E2550;border-color:transparent;color:var(--accent)}
+.tabs .ext{margin-left:auto;color:var(--accent)}
+.panel[hidden]{display:none}
+.panel{animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.explore{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:900px){.explore{grid-template-columns:minmax(0,1fr)}}
+.explore a{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-decoration:none;transition:transform .2s,border-color .2s}
+.explore a:hover{transform:translateY(-4px);border-color:var(--accent)}
+.explore .thumb{aspect-ratio:16/9;background:radial-gradient(120% 90% at 30% 10%,#1F2A44,#0E1320);overflow:hidden}
+.explore .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.explore a:hover .thumb img{transform:scale(1.04)}
+.explore .tx{padding:20px 22px;display:grid;gap:6px}
+.explore b{font:800 1.35rem var(--f-d);display:flex;justify-content:space-between;align-items:center}
+.explore b span{font:500 .8rem var(--f-m);color:var(--accent)}
+.explore p{color:var(--muted);font-size:.93rem}
+.sub-head{margin:56px 0 0;display:grid;gap:6px}
+.sub-head h3{font-size:1.5rem;font-weight:800}
+.sub-head p{color:var(--muted)}
+.mini:empty,.sub-head.empty{display:none}
 
 /* projetos */
 .projects{display:grid;gap:28px}
@@ -199,16 +208,25 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
 </svg>
 
 <header class="top">
-  <div class="wrap">
+  <div class="wrap bar1">
     <a class="brand" href="#inicio"><img src="assets/foto.jpg" alt="" width="34" height="34">Matheus Abelardo</a>
-    <nav class="nav" aria-label="Seções">
-      <a href="#projetos">Projetos</a><a href="#jogos">Jogos & ferramentas</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a href="/portfolio/">Planos e preços</a>
-    </nav>
     <a class="btn btn-primary btn-sm" href="/portfolio/">Quero um site</a>
+  </div>
+  <div class="wrap">
+    <nav class="tabs" aria-label="Seções do portfólio">
+      <a href="#inicio">Início</a>
+      <a href="#sites">Sites <small data-n="sites"></small></a>
+      <a href="#games">Games <small data-n="games"></small></a>
+      <a href="#apps">Aplicações <small data-n="apps"></small></a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a class="ext" href="/portfolio/">Planos e preços ↗</a>
+    </nav>
   </div>
 </header>
 
-<main id="inicio">
+<main>
+<div class="panel" id="inicio">
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="rv">
@@ -216,7 +234,7 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
       <h1>Eu crio <em>sites, sistemas e jogos</em> que saem do papel e vão para o ar.</h1>
       <p class="lead">Sou o Matheus Abelardo, desenvolvedor full stack e estudante de Engenharia de Computação na UFOP. Faço desde landing pages que vendem até painéis de gestão com banco de dados, extensões de navegador e jogos.</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+        <a class="btn btn-primary" href="#sites">Ver projetos</a>
         <a class="btn btn-zap" href="https://wa.me/5531983410907?text=Ol%C3%A1%20Matheus!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
         <a class="btn btn-ghost" href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>GitHub</a>
       </div>
@@ -226,46 +244,27 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
         <div><b data-count="18">18</b><span>repositórios públicos</span></div>
       </div>
     </div>
-    <div class="portrait rv">
-      <div class="ph"><img src="assets/foto.jpg" alt="Foto de Matheus Abelardo" width="380" height="475"></div>
-      <div class="tag t1"><span class="dot">🎓</span><div><b>Eng. de Computação</b><small>UFOP · Minas Gerais</small></div></div>
-      <div class="tag t2"><span class="dot">⚡</span><div><b>Full stack</b><small>Web · Apps · Games</small></div></div>
-    </div>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="track" id="mq"></div></div>
 
-<section id="projetos">
+<section>
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Projetos em destaque</span>
-      <h2>Sites e sistemas publicados</h2>
-      <p class="muted">Arraste as imagens ou use as setas para ver as versões de computador e celular. Clique numa imagem para ampliar.</p>
+      <span class="eyebrow">Portfólio</span>
+      <h2>Escolha o que quer ver</h2>
+      <p class="muted">Os projetos estão separados por tipo. Cada um tem imagens em carrossel, link para ver ao vivo e o código no GitHub.</p>
     </div>
-    <div class="filters" role="group" aria-label="Filtrar projetos">
-      <button type="button" data-f="all" aria-pressed="true">Todos</button>
-      <button type="button" data-f="site" aria-pressed="false">Sites</button>
-      <button type="button" data-f="sistema" aria-pressed="false">Sistemas web</button>
-      <button type="button" data-f="jogo" aria-pressed="false">Jogos</button>
-      <button type="button" data-f="ferramenta" aria-pressed="false">Ferramentas</button>
+    <div class="explore">
+      <a class="rv" href="#sites"><div class="thumb"><img src="assets/shots/selecao-d.jpg" alt="" loading="lazy"></div><div class="tx"><b>Sites <span data-n="sites"></span></b><p>Landing pages e sites institucionais publicados para clientes reais.</p></div></a>
+      <a class="rv" href="#games"><div class="thumb"><img src="assets/maze/mundo_aberto.jpg" alt="" loading="lazy"></div><div class="tx"><b>Games <span data-n="games"></span></b><p>Jogos no navegador, extensão multiplayer e jogos em GameMaker e Java.</p></div></a>
+      <a class="rv" href="#apps"><div class="thumb"><img src="assets/shots/print_hortifruti_painel.jpg" alt="" loading="lazy"></div><div class="tx"><b>Aplicações <span data-n="apps"></span></b><p>Sistemas web com banco de dados, ferramentas com IA e apps para músicos.</p></div></a>
     </div>
-    <div class="projects" id="list"></div>
   </div>
 </section>
 
-<section id="jogos" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Laboratório</span>
-      <h2>Outros projetos do GitHub</h2>
-      <p class="muted">Projetos de estudo, faculdade e experimentos. Cada um leva ao repositório com o código.</p>
-    </div>
-    <div class="mini" id="mini"></div>
-  </div>
-</section>
-
-<section id="servicos" style="padding-top:0">
+<section style="padding-top:0">
   <div class="wrap">
     <div class="sell rv">
       <div>
@@ -289,8 +288,55 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
     </div>
   </div>
 </section>
+</div>
 
-<section id="sobre">
+<div class="panel" id="sites" hidden>
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Sites</span>
+      <h2>Sites publicados</h2>
+      <p class="muted">Landing pages e sites institucionais no ar. Arraste as imagens ou use as setas para ver as versões de computador e celular; clique para ampliar.</p>
+    </div>
+    <div class="projects" data-list="sites"></div>
+    <div class="sub-head rv" data-sub="sites"><h3>Estudos</h3><p>Primeiros projetos de HTML e CSS.</p></div>
+    <div class="mini" data-mini="sites"></div>
+  </div>
+</section>
+</div>
+
+<div class="panel" id="games" hidden>
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Games</span>
+      <h2>Jogos</h2>
+      <p class="muted">Jogos para navegador, extensão de navegador e jogos feitos em GameMaker e Java. Clique nas imagens para ampliar.</p>
+    </div>
+    <div class="projects" data-list="games"></div>
+    <div class="sub-head rv" data-sub="games"><h3>Outros jogos</h3><p>Projetos menores e experimentos. Cada um leva ao repositório com o código.</p></div>
+    <div class="mini" data-mini="games"></div>
+  </div>
+</section>
+</div>
+
+<div class="panel" id="apps" hidden>
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Aplicações</span>
+      <h2>Sistemas e ferramentas</h2>
+      <p class="muted">Sistemas web com banco de dados, painéis de gestão e ferramentas com inteligência artificial.</p>
+    </div>
+    <div class="projects" data-list="apps"></div>
+    <div class="sub-head rv" data-sub="apps"><h3>Outras aplicações</h3><p>Projetos da faculdade e ferramentas de estudo. Cada um leva ao repositório com o código.</p></div>
+    <div class="mini" data-mini="apps"></div>
+  </div>
+</section>
+</div>
+
+<div class="panel" id="sobre" hidden>
+<section>
   <div class="wrap about">
     <div class="rv">
       <div class="sec-head" style="margin-bottom:24px">
@@ -314,8 +360,10 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
     </div>
   </div>
 </section>
+</div>
 
-<section id="contato" style="padding-top:0">
+<div class="panel" id="contato" hidden>
+<section>
   <div class="wrap contact rv">
     <span class="eyebrow">Contato</span>
     <h2>Tem um projeto em mente? Vamos tirar do papel.</h2>
@@ -332,12 +380,13 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
     </div>
   </div>
 </section>
+</div>
 </main>
 
 <footer>
   <div class="wrap">
     <span>© <span id="y">2026</span> Matheus Abelardo · Desenvolvedor web e de jogos</span>
-    <span><a href="/portfolio/">Planos e preços</a> · <a href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener">GitHub</a> · <a href="#inicio">Voltar ao topo</a></span>
+    <span><a href="/portfolio/">Planos e preços</a> · <a href="https://github.com/Abelardo-Matheus" target="_blank" rel="noopener">GitHub</a> · <a href="#" onclick="scrollTo({top:0,behavior:'smooth'});return false">Voltar ao topo</a></span>
   </div>
 </footer>
 
@@ -349,52 +398,52 @@ const S='assets/shots/';
 const d=(src,cap,url)=>({t:'d',src,cap,url}), m=(src,cap)=>({t:'m',src,cap}), g=(src,cap)=>({t:'g',src,cap});
 
 const PROJECTS=[
- {cat:'site',title:'Seleção Delas · Grupo VIP de promoções',chips:['Landing page','Mobile-first','Modo claro e escuro'],
+ {cat:'sites',title:'Seleção Delas · Grupo VIP de promoções',chips:['Landing page','Mobile-first','Modo claro e escuro'],
   desc:'Página de captação para o grupo de promoções de moda e beleza da Monaline, divulgada todos os dias em stories, status e anúncios. Tem também uma versão temática de Natal.',
   bullets:['Um único botão de ação que leva direto ao convite do grupo','Prévia personalizada no WhatsApp e redes sociais (Open Graph)','HTML, CSS e JS puros: carrega rápido até em 3G'],
   live:'https://selecaodelas.github.io/',code:GH+'sele-o-delas-monaline',
   slides:[d(S+'selecao-d.jpg','Versão desktop','selecaodelas.github.io'),m(S+'selecao-m.jpg','Versão celular'),m(S+'selecao-natal-m.jpg','Tema de Natal no celular'),d(S+'selecao-natal-d.jpg','Tema de Natal','selecaodelas.github.io/natal')]},
- {cat:'sistema',title:'Hortifruti J&M · Vitrine virtual + painel',chips:['Vitrine online','Supabase','Painel de gestão'],
+ {cat:'apps',title:'Hortifruti J&M · Vitrine virtual + painel',chips:['Vitrine online','Supabase','Painel de gestão'],
   desc:'Vitrine online de um hortifruti com busca de produtos e pedido pelo WhatsApp. Por trás dela, um painel onde o lojista controla vendas, estoque, caixa, fiados e retiradas, com lucro e margem por período.',
   bullets:['73 produtos no banco de dados, com alerta de estoque baixo','Login do lojista e regras de segurança no Supabase','Acessibilidade: aumentar fonte e trocar tema'],
   live:'https://abelardo-matheus.github.io/Hortifrut_Web/',code:GH+'Hortifrut_Web',
   slides:[d(S+'horti-d.jpg','Vitrine','abelardo-matheus.github.io/Hortifrut_Web'),d(S+'print_hortifruti_painel.jpg','Painel do lojista','Hortifrut_Web/admin'),m(S+'horti-m.jpg','Vitrine no celular')]},
- {cat:'site',title:'Hospital São José de Nova Era',chips:['Site institucional','Bootstrap','Trabalho em equipe'],
+ {cat:'sites',title:'Hospital São José de Nova Era',chips:['Site institucional','Bootstrap','Trabalho em equipe'],
   desc:'Site institucional desenvolvido pela Visão Empresa Jr. Fui responsável por cerca de 50% do desenvolvimento, trabalhando em equipe com Scrum.',
   bullets:['Carrosséis adaptativos e banners responsivos','Seções de emergência, consultas, exames, especialidades e ouvidoria','Domínio próprio e no ar para o público'],
   live:'https://hsjnovaera.com.br/',
   slides:[d(S+'hsj-d.jpg','Página inicial','hsjnovaera.com.br'),m(S+'hsj-m.jpg','Versão celular'),d(S+'print_hsj.jpg','Seções internas','hsjnovaera.com.br')]},
- {cat:'sistema',title:'WaSpeed KB · Gestão de tarefas com IA',chips:['React + TypeScript','Supabase','Kanban'],
+ {cat:'apps',title:'WaSpeed KB · Gestão de tarefas com IA',chips:['React + TypeScript','Supabase','Kanban'],
   desc:'Plataforma de tarefas e base de conhecimento inspirada no ClickUp, com visões em lista e Kanban, limites de WIP, colunas recolhíveis e dados reais de equipe via Supabase.',
   bullets:['Os mesmos dados em lista ou quadro Kanban','Autenticação e banco de dados na nuvem','Testes de ponta a ponta com Playwright'],
   live:'https://abelardo-matheus.github.io/taskflow-whisper-32/',code:GH+'taskflow-whisper-32',
   slides:[d(S+'taskflow-d.jpg','Tela de acesso','abelardo-matheus.github.io/taskflow-whisper-32'),m(S+'taskflow-m.jpg','Versão celular')]},
- {cat:'jogo',title:'PageGame · O bichinho que come sites',chips:['Extensão de navegador','Multiplayer','Supabase'],
+ {cat:'games',title:'PageGame · O bichinho que come sites',chips:['Extensão de navegador','Multiplayer','Supabase'],
   desc:'Um jogo que roda em cima de qualquer página: o bichinho segue o mouse, come as palavras e cresce. Funciona como extensão (Chrome, Brave, Edge), no celular com artigos da Wikipédia e como APK.',
   bullets:['Multiplayer: quem está na mesma página joga junto','Dois modos: Bicho e Saltador, com armas e dash','Contas, inventário e instalador de um comando'],
   live:'https://abelardo-matheus.github.io/pagegame-web/',code:GH+'pagegame-web',
   slides:[d(S+'pagegame-d.jpg','Versão web','abelardo-matheus.github.io/pagegame-web'),m(S+'pagegame-m.jpg','Versão celular')]},
- {cat:'jogo',title:'Maze of Existence',chips:['GameMaker','Roguelike','Projeto da faculdade'],
+ {cat:'games',title:'Maze of Existence',chips:['GameMaker','Roguelike','Projeto da faculdade'],
   desc:'Jogo de ação e sobrevivência em que o jogador começa bebê e chega à vida adulta, enfrentando inimigos que representam os medos de cada fase. Mistura hordas no estilo survivor com exploração de salas em labirintos procedurais.',
   bullets:['Mundo aberto, cidade e floresta','Inventário, crafting e árvore de habilidades','Labirintos gerados proceduralmente'],
   code:GH+'MAZE-OF-EXISTENCE',
   slides:[g('assets/maze/mundo_aberto.jpg','Mundo aberto'),g('assets/maze/cidade_floresta.jpg','Cidade e floresta'),g('assets/maze/inventario_craft.jpg','Inventário e crafting'),g('assets/maze/level_up_skills.jpg','Level up e habilidades')]},
- {cat:'ferramenta',title:'EIGUIT · Estúdio virtual de guitarra',chips:['Python','Pygame','IA de áudio'],
+ {cat:'apps',title:'EIGUIT · Estúdio virtual de guitarra',chips:['Python','Pygame','IA de áudio'],
   desc:'Estúdio para guitarristas e baixistas: braço interativo, campo harmônico, editor de tablatura, trilhas de estudo guiado, mini-jogos e afinador com processamento de áudio por IA.',
   bullets:['Escalas e campo harmônico em tempo real no braço','Editor de tablatura e busca de músicas','Mini-jogos para treinar ouvido e ritmo'],
   code:GH+'EIGUIT',
   slides:[g('assets/eiguit/braco_guitarra.jpg','Braço interativo'),g('assets/eiguit/editor_tablatura.jpg','Editor de tablatura'),g('assets/eiguit/campo_harmonico.jpg','Campo harmônico'),g('assets/eiguit/estudos.jpg','Estudos guiados'),g('assets/eiguit/jogo_acerte_a_nota.jpg','Mini-jogo Acerte a Nota'),g('assets/eiguit/jogo_rhythm_hero.jpg','Rhythm Hero'),g('assets/eiguit/afinador_ia.jpg','Afinador com IA')]},
- {cat:'site',title:'Pires Advocacia',chips:['Site institucional','Bootstrap','Vercel'],
+ {cat:'sites',title:'Pires Advocacia',chips:['Site institucional','Bootstrap','Vercel'],
   desc:'Site para um escritório de advocacia, com apresentação, áreas de atuação, diferenciais e contato, focado em passar confiança e facilitar o primeiro contato do cliente.',
   bullets:['Layout responsivo com Bootstrap','Seções de serviços, sobre e diferenciais','Contato direto por WhatsApp'],
   live:'https://pires-advocacia.vercel.app/',code:GH+'Pires-Advocacia',
   slides:[d(S+'pires-d.jpg','Página inicial','pires-advocacia.vercel.app'),m(S+'pires-m.jpg','Versão celular')]},
- {cat:'site',title:'Terapia Cognitiva Comportamental',chips:['Landing page','HTML & CSS','Saúde'],
+ {cat:'sites',title:'Terapia Cognitiva Comportamental',chips:['Landing page','HTML & CSS','Saúde'],
   desc:'Página de apresentação para uma psicoterapeuta, explicando o que é a TCC, seus benefícios e como agendar o atendimento.',
   bullets:['Identidade visual própria com borboletas','Seções de início, sobre e contato'],
   live:'https://abelardo-matheus.github.io/Terapia/',code:GH+'Terapia',
   slides:[d(S+'terapia-d.jpg','Página inicial','abelardo-matheus.github.io/Terapia'),m(S+'terapia-m.jpg','Versão celular')]},
- {cat:'jogo',title:'Mega Arena Royale · Bots com IA',chips:['JavaScript','Canvas 2D','Projeto acadêmico'],
+ {cat:'games',title:'Mega Arena Royale · Bots com IA',chips:['JavaScript','Canvas 2D','Projeto acadêmico'],
   desc:'Arena tática 2D jogável no navegador, desenvolvida em disciplina da UFOP a partir de uma base fornecida em aula, com foco na inteligência dos bots.',
   bullets:['Bots que miram, se esquivam e usam cobertura','Modos solo e em equipe com 5 níveis de intensidade','Progresso salvo no navegador'],
   live:'https://abelardo-matheus.github.io/Joguinho-Ia/',code:GH+'Joguinho-Ia',
@@ -402,12 +451,12 @@ const PROJECTS=[
 ];
 
 const MINI=[
- ['MIDIMK300','MK-300 Visual Tone Assistant','App Flask que usa IA (Gemini, OpenAI ou Groq) para sugerir timbres da pedaleira M-VAVE MK-300 a partir de uma música.','Python · Flask · LLM'],
- ['MiniZelda','MiniZelda','Jogo de aventura no estilo clássico, feito em Java.','Java'],
- ['JogoGMPlataforma','Jogo de plataforma','Plataforma 2D feito no GameMaker.','GameMaker'],
- ['TrabalhoBD','Sistema com banco de dados','Cadastro, login e CRUD completo para a disciplina de Banco de Dados da UFOP.','PHP · MySQL'],
- ['Faculdade','Algoritmos em C','Exercícios e trabalhos de estrutura de dados da graduação.','C'],
- ['TreinamentoSites','Treinamento de HTML','Primeiros estudos de HTML: tabelas, listas, links e estrutura.','HTML'],
+ ['apps','MIDIMK300','MK-300 Visual Tone Assistant','App Flask que usa IA (Gemini, OpenAI ou Groq) para sugerir timbres da pedaleira M-VAVE MK-300 a partir de uma música.','Python · Flask · LLM'],
+ ['games','MiniZelda','MiniZelda','Jogo de aventura no estilo clássico, feito em Java.','Java'],
+ ['games','JogoGMPlataforma','Jogo de plataforma','Plataforma 2D feito no GameMaker.','GameMaker'],
+ ['apps','TrabalhoBD','Sistema com banco de dados','Cadastro, login e CRUD completo para a disciplina de Banco de Dados da UFOP.','PHP · MySQL'],
+ ['apps','Faculdade','Algoritmos em C','Exercícios e trabalhos de estrutura de dados da graduação.','C'],
+ ['sites','TreinamentoSites','Treinamento de HTML','Primeiros estudos de HTML: tabelas, listas, links e estrutura.','HTML'],
 ];
 
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
@@ -417,8 +466,7 @@ function slideHTML(s){
   if(s.t==='m') return `<div class="phone" data-z="${s.src}" data-c="${esc(s.cap)}">${img}</div>`;
   return `<img class="shot" src="${s.src}" alt="${esc(s.cap)}" loading="lazy" decoding="async" data-z="${s.src}" data-c="${esc(s.cap)}">`;
 }
-const list=document.getElementById('list');
-list.innerHTML=PROJECTS.map((p,i)=>`
+const card=(p,i)=>`
 <article class="proj rv" data-cat="${p.cat}">
   <div class="car" data-i="${i}" aria-roledescription="carrossel" aria-label="Imagens de ${esc(p.title)}">
     <div class="viewport"><div class="slides">${p.slides.map(s=>`<div class="slide" role="group" aria-roledescription="slide"><figure>${slideHTML(s)}</figure></div>`).join('')}</div></div>
@@ -440,9 +488,15 @@ list.innerHTML=PROJECTS.map((p,i)=>`
     </div>
     ${p.live?`<span class="url">${p.live.replace(/^https?:\/\//,'').replace(/\/$/,'')}</span>`:''}
   </div>
-</article>`).join('');
-
-document.getElementById('mini').innerHTML=MINI.map(([r,t,dsc,tech])=>`<a class="rv" href="${GH+r}" target="_blank" rel="noopener"><small>${tech}</small><b>${t}</b><p>${dsc}</p></a>`).join('');
+</article>`;
+['sites','games','apps'].forEach(c=>{
+  document.querySelector(`[data-list="${c}"]`).innerHTML=PROJECTS.map((p,i)=>p.cat===c?card(p,i):'').join('');
+  const mi=MINI.filter(x=>x[0]===c);
+  document.querySelector(`[data-mini="${c}"]`).innerHTML=mi.map(([,r,t,dsc,tech])=>`<a class="rv" href="${GH+r}" target="_blank" rel="noopener"><small>${tech}</small><b>${t}</b><p>${dsc}</p></a>`).join('');
+  if(!mi.length)document.querySelector(`[data-sub="${c}"]`).classList.add('empty');
+  const n=PROJECTS.filter(p=>p.cat===c).length+mi.length;
+  document.querySelectorAll(`[data-n="${c}"]`).forEach(el=>el.textContent=el.tagName==='SMALL'?n:n+' projetos');
+});
 
 // carrosséis
 document.querySelectorAll('.car').forEach(car=>{
@@ -473,11 +527,18 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
 
-// filtros
-document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  document.querySelectorAll('.proj').forEach(pr=>pr.hidden=!(b.dataset.f==='all'||pr.dataset.cat===b.dataset.f));
-});
+// abas
+const panels=[...document.querySelectorAll('.panel')], tabs=[...document.querySelectorAll('.tabs a:not(.ext)')];
+function show(){
+  const id=(location.hash||'#inicio').slice(1), pn=panels.find(x=>x.id===id)||panels[0];
+  panels.forEach(x=>x.hidden=x!==pn);
+  tabs.forEach(t=>t.getAttribute('href')==='#'+pn.id?t.setAttribute('aria-current','page'):t.removeAttribute('aria-current'));
+  const cur=document.querySelector('.tabs [aria-current]'); if(cur)cur.scrollIntoView({inline:'nearest',block:'nearest'});
+  window.scrollTo(0,0);
+  const label=document.querySelector(`.tabs a[href="#${pn.id}"]`).firstChild.textContent.trim();
+  document.title=(pn.id==='inicio'?'':label+' · ')+'Matheus Abelardo · Desenvolvedor Web e de Jogos';
+}
+addEventListener('hashchange',show); show();
 
 // marquee
 const words=['Landing pages','Sites institucionais','Sistemas web','Supabase','React','Extensões de navegador','Jogos 2D','Python','Automação com n8n','GitHub Pages'];
